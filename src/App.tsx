@@ -40,7 +40,7 @@ function App() {
         .map((country) => ({
           name: country.name.common,
           flag: country.flag,
-          id: country.cioc,
+          id: country.cioc || country.cca3,
         }))
         .sort((a, b) => a.name.localeCompare(b.name));
     }
@@ -51,7 +51,7 @@ function App() {
   const addCountry = (country: CountryOptionData) => {
     const countryData = listOfCountries.find(({ id }) => id === country.id);
 
-    if (!countryData) {
+    if (!countryData || countries.some(({ id }) => country.id === id)) {
       return;
     }
 
@@ -129,6 +129,15 @@ function App() {
               <td>{country.medals.silver}</td>
               <td>{country.medals.bronze}</td>
               <td>{country.medals.total}</td>
+              <td
+                onClick={() =>
+                  setCountries((countries) =>
+                    countries.filter(({ id }) => id !== country.id)
+                  )
+                }
+              >
+                ❌
+              </td>
             </tr>
           ))}
         </tbody>

@@ -8,6 +8,7 @@ interface CountryFromApi {
   name: CountryName;
   flag: string;
   cioc: string;
+  cca3: string;
 }
 
 export async function getCountries() {
