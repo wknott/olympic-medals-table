@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ThemeProvider } from "styled-components";
+import defaultTheme from "./theme";
+import GlobalStyle from "./GlobalStyle";
 
 const queryClient = new QueryClient();
 
@@ -11,9 +14,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
+        <App />
+      </QueryClientProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
