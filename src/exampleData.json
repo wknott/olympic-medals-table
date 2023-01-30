@@ -1,0 +1,46 @@
+[
+  {
+    "name": "United Kingdom",
+    "flag": "🇬🇧",
+    "id": "GBR",
+    "medals": {
+      "gold": 4,
+      "silver": 2,
+      "bronze": 3,
+      "total": 9
+    }
+  },
+  {
+    "name": "Venezuela",
+    "flag": "🇻🇪",
+    "id": "VEN",
+    "medals": {
+      "gold": 1,
+      "silver": 2,
+      "bronze": 1,
+      "total": 4
+    }
+  },
+  {
+    "name": "Italy",
+    "flag": "🇮🇹",
+    "id": "ITA",
+    "medals": {
+      "gold": 5,
+      "silver": 33,
+      "bronze": 2,
+      "total": 40
+    }
+  },
+  {
+    "name": "Poland",
+    "flag": "🇵🇱",
+    "id": "POL",
+    "medals": {
+      "gold": 2,
+      "silver": 3,
+      "bronze": 2,
+      "total": 7
+    }
+  }
+]
