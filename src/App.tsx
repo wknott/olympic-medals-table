@@ -28,7 +28,13 @@ export interface CountryOptionData {
 
 function App() {
   const [countries, setCountries] = useState<Country[]>(exampleCountries);
-  const [sortByOption, setSortByOption] = useState<keyof Medals>("total");
+  const [sortByOption, setSortByOption] = useState<{
+    field: keyof Medals;
+    direction: "asc" | "desc";
+  }>({
+    field: "total",
+    direction: "desc",
+  });
   const countriesQuery = useQuery({
     queryKey: ["countries"],
     queryFn: getCountries,
@@ -67,13 +73,18 @@ function App() {
   useEffect(() => {
     const sortCountries = () => {
       setCountries((countries) =>
-        [...countries].sort(
-          (a, b) => b.medals[sortByOption] - a.medals[sortByOption]
-        )
+        [...countries].sort((a, b) => {
+          if (sortByOption.direction === "asc")
+            return a.medals[sortByOption.field] - b.medals[sortByOption.field];
+
+          return b.medals[sortByOption.field] - a.medals[sortByOption.field];
+        })
       );
     };
     sortCountries();
   }, [sortByOption]);
+
+  const medalsKeys: (keyof Medals)[] = ["gold", "silver", "bronze", "total"];
 
   return (
     <main className="App">
@@ -86,38 +97,27 @@ function App() {
           <tr>
             <th scope="col"></th>
             <th scope="col">Country name</th>
-            <th
-              scope="col"
-              onClick={() => {
-                setSortByOption("gold");
-              }}
-            >
-              Gold
-            </th>
-            <th
-              scope="col"
-              onClick={() => {
-                setSortByOption("silver");
-              }}
-            >
-              Silver
-            </th>
-            <th
-              scope="col"
-              onClick={() => {
-                setSortByOption("bronze");
-              }}
-            >
-              Bronze
-            </th>
-            <th
-              scope="col"
-              onClick={() => {
-                setSortByOption("total");
-              }}
-            >
-              Total
-            </th>
+            {medalsKeys.map((fieldName) => (
+              <th
+                key={fieldName}
+                scope="col"
+                onClick={() => {
+                  setSortByOption({
+                    field: fieldName,
+                    direction:
+                      sortByOption.field === fieldName
+                        ? sortByOption.direction === "asc"
+                          ? "desc"
+                          : "asc"
+                        : "desc",
+                  });
+                }}
+              >
+                {sortByOption.field === fieldName &&
+                  (sortByOption.direction === "desc" ? "⬇ " : "⬆ ")}
+                {fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
