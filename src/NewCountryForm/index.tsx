@@ -1,5 +1,5 @@
 import { FC, FormEvent, useState } from "react";
-import { CountryFromList, CountryOptionData } from "../App";
+import { CountryFromList, CountryOptionData } from "../interfaces";
 
 interface Props {
   addCountry: (country: CountryOptionData) => void;
