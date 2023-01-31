@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/olympic-medals-table/static/js/main.a4c94b4f.js",
+    "main.js": "/olympic-medals-table/static/js/main.c0a146d4.js",
     "static/js/787.2486cdd0.chunk.js": "/olympic-medals-table/static/js/787.2486cdd0.chunk.js",
     "index.html": "/olympic-medals-table/index.html",
-    "main.a4c94b4f.js.map": "/olympic-medals-table/static/js/main.a4c94b4f.js.map",
+    "main.c0a146d4.js.map": "/olympic-medals-table/static/js/main.c0a146d4.js.map",
     "787.2486cdd0.chunk.js.map": "/olympic-medals-table/static/js/787.2486cdd0.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a4c94b4f.js"
+    "static/js/main.c0a146d4.js"
   ]
 }
