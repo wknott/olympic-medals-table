@@ -13,6 +13,7 @@ function App() {
     setSortByOption,
     sortByOption,
     medalsKeys,
+    areCountriesLoadedSuccessfully,
   } = useCountries();
 
   return (
@@ -21,10 +22,12 @@ function App() {
         <h1>Olympic medals table</h1>
       </header>
       <Section title={"Add new country"}>
-        <NewCountryForm
-          addCountry={addCountry}
-          countriesOptions={listOfCountries}
-        />
+        {areCountriesLoadedSuccessfully && (
+          <NewCountryForm
+            addCountry={addCountry}
+            countriesOptions={listOfCountries}
+          />
+        )}
       </Section>
       <Section title="Medals table">
         <CountriesTable

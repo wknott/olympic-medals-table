@@ -8,7 +8,9 @@ interface Props {
 }
 
 const NewCountryForm: FC<Props> = ({ addCountry, countriesOptions }) => {
-  const [countryName, setCountryName] = useState("USA");
+  const randomCountry =
+    countriesOptions[Math.floor(Math.random() * countriesOptions.length)];
+  const [countryName, setCountryName] = useState(randomCountry?.id);
   const [goldMedals, setGoldMedals] = useState("0");
   const [silverMedals, setSilverMedals] = useState("0");
   const [bronzeMedals, setBronzeMedals] = useState("0");
@@ -25,7 +27,7 @@ const NewCountryForm: FC<Props> = ({ addCountry, countriesOptions }) => {
         total: +goldMedals + +silverMedals + +bronzeMedals,
       },
     });
-    setCountryName("USA");
+    setCountryName(randomCountry?.id);
     setGoldMedals("0");
     setSilverMedals("0");
     setBronzeMedals("0");

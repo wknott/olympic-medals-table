@@ -29,11 +29,14 @@ export const useCountries = () => {
           flag: country.flag,
           id: country.cioc || country.cca3,
         }))
+        .filter(
+          (country) => !countries.map(({ id }) => id).includes(country.id)
+        )
         .sort((a, b) => a.name.localeCompare(b.name));
     }
 
     return [];
-  }, [countriesQuery]);
+  }, [countriesQuery, countries]);
 
   const addCountry = (country: CountryOptionData) => {
     const countryData = listOfCountries.find(({ id }) => id === country.id);
@@ -83,5 +86,6 @@ export const useCountries = () => {
     setSortByOption,
     sortByOption,
     medalsKeys,
+    areCountriesLoadedSuccessfully: countriesQuery.isSuccess,
   };
 };
