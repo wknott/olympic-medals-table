@@ -1,3 +1,41 @@
+# Olympic medals table
+
+## Table of contents
+
+- [Demo](#demo)
+- [Description](#description)
+- [Screenshot](#screenshot)
+- [Technologies](#technologies)
+- [Available Scripts](#available-scripts)
+    - [npm start](#npm-start)
+    - [npm run build](#npm-run-build)
+    - [npm run eject](#npm-run-eject)
+
+## Demo
+
+[Olympic medals table](https://wknott.github.io/olympic-medals-table/)
+
+## Description
+
+This is a simple app with Olympic Medals Table to be displayed in.
+The app allow adding countries with number of gold, silver and bronze medals.
+You can sort the data by number of medals in both, ascending and descending order by clicking the medal icon.
+If you would, you can remove the country from the table by clicking X button on the right column.
+
+## Screenshot
+
+[![Olympic medals table](screenshot.png)](https://wknott.github.io/olympic-medals-table/)
+
+
+## Technologies
+
+- React
+- TypeScript
+- create-react-app
+- React Query
+- Axios
+- Styled components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
