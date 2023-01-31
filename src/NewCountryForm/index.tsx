@@ -52,6 +52,7 @@ const NewCountryForm: FC<Props> = ({ addCountry, countriesOptions }) => {
         <LabelText>🥇 Gold</LabelText>
         <Input
           min={0}
+          max={999}
           value={goldMedals}
           type="number"
           onChange={({ target }) => {
@@ -63,6 +64,7 @@ const NewCountryForm: FC<Props> = ({ addCountry, countriesOptions }) => {
         <LabelText>🥈 Silver</LabelText>
         <Input
           min={0}
+          max={999}
           value={silverMedals}
           type="number"
           onChange={({ target }) => {
@@ -74,6 +76,7 @@ const NewCountryForm: FC<Props> = ({ addCountry, countriesOptions }) => {
         <LabelText>🥉 Bronze</LabelText>
         <Input
           min={0}
+          max={999}
           value={bronzeMedals}
           type="number"
           onChange={({ target }) => {

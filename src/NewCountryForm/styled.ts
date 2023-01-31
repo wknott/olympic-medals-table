@@ -41,7 +41,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   align-self: end;
-  padding: 10px;
+  padding: 10px 20px;
   max-height: 40px;
   background-color: ${({ theme }) => theme.colors.primary};
   color: white;
