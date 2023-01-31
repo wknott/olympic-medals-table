@@ -18,7 +18,7 @@ const defaultTheme: Theme = {
     background: "#eee",
   },
   breakpoints: {
-    mobileMax: 767,
+    mobileMax: 900,
   },
 };
 
