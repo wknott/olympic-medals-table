@@ -4,8 +4,10 @@ import {
   Table,
   TableCell,
   TableCellMedal,
+  TableCellRemove,
   TableHeader,
   TableHeaderMedal,
+  TableHeaderRemove,
   TableRow,
   TableWrapper,
 } from "./styled";
@@ -62,7 +64,7 @@ const CountriesTable: FC<Props> = ({
               {MedalDescription[fieldName]}
             </TableHeaderMedal>
           ))}
-          <TableHeaderMedal></TableHeaderMedal>
+          <TableHeaderRemove></TableHeaderRemove>
         </tr>
       </thead>
       <tbody>
@@ -75,9 +77,9 @@ const CountriesTable: FC<Props> = ({
             <TableCellMedal>{country.medals.silver}</TableCellMedal>
             <TableCellMedal>{country.medals.bronze}</TableCellMedal>
             <TableCellMedal>{country.medals.total}</TableCellMedal>
-            <TableCellMedal onClick={() => removeCountry(country.id)}>
+            <TableCellRemove onClick={() => removeCountry(country.id)}>
               ❌
-            </TableCellMedal>
+            </TableCellRemove>
           </TableRow>
         ))}
       </tbody>

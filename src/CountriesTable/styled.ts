@@ -30,6 +30,16 @@ export const TableHeaderMedal = styled(TableHeader)`
   width: 80px;
   font-size: 24px;
   white-space: nowrap;
+  cursor: pointer;
+`;
+
+export const TableCellRemove = styled(TableCellMedal)`
+  width: 40px;
+  cursor: pointer;
+`;
+
+export const TableHeaderRemove = styled(TableHeader)`
+  width: 40px;
 `;
 
 export const TableRow = styled.tr`
