@@ -15,10 +15,10 @@
     "flag": "🇻🇪",
     "id": "VEN",
     "medals": {
-      "gold": 1,
-      "silver": 2,
-      "bronze": 1,
-      "total": 4
+      "gold": 4,
+      "silver": 3,
+      "bronze": 2,
+      "total": 9
     }
   },
   {
@@ -27,9 +27,9 @@
     "id": "ITA",
     "medals": {
       "gold": 5,
-      "silver": 33,
+      "silver": 1,
       "bronze": 2,
-      "total": 40
+      "total": 8
     }
   },
   {
@@ -37,10 +37,10 @@
     "flag": "🇵🇱",
     "id": "POL",
     "medals": {
-      "gold": 2,
+      "gold": 5,
       "silver": 3,
       "bronze": 2,
-      "total": 7
+      "total": 10
     }
   }
 ]

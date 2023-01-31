@@ -56,17 +56,21 @@ export const useCountries = () => {
   };
 
   useEffect(() => {
-    const sortCountries = () => {
-      setCountries((countries) =>
-        [...countries].sort((a, b) => {
-          if (sortByOption.direction === "asc")
-            return a.medals[sortByOption.field] - b.medals[sortByOption.field];
+    const compareTwoCountries = (
+      firstCountry: Country,
+      secondCountry: Country
+    ) => {
+      const sortValue =
+        firstCountry.medals[sortByOption.field] -
+          secondCountry.medals[sortByOption.field] ||
+        firstCountry.medals["gold"] - secondCountry.medals["gold"] ||
+        firstCountry.medals["silver"] - secondCountry.medals["silver"] ||
+        firstCountry.medals["bronze"] - secondCountry.medals["bronze"];
 
-          return b.medals[sortByOption.field] - a.medals[sortByOption.field];
-        })
-      );
+      return sortByOption.direction === "asc" ? sortValue : -sortValue;
     };
-    sortCountries();
+
+    setCountries((countries) => [...countries].sort(compareTwoCountries));
   }, [sortByOption]);
 
   const medalsKeys: (keyof Medals)[] = ["gold", "silver", "bronze", "total"];
