@@ -11,7 +11,10 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   body {
     font-family: "Lato", sans-serif;
     color: ${({ theme }) => theme.colors.text};
-    background-color: ${({ theme }) => theme.colors.background};
+    background-image: linear-gradient(to right top, #145da0, #367bb1, #5c99c1, #85b7d0, #b1d4e0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
   }
 `;
 
