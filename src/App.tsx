@@ -3,7 +3,6 @@ import CountriesTable from "./CountriesTable";
 import { useCountries } from "./useCountries";
 import Container from "./common/Container";
 import Section from "./common/Section";
-import { Title } from "./common/Title";
 
 function App() {
   const {
@@ -18,7 +17,9 @@ function App() {
 
   return (
     <Container>
-      <Title>Olympic medals table</Title>
+      <header>
+        <h1>Olympic medals table</h1>
+      </header>
       <Section title={"Add new country"}>
         <NewCountryForm
           addCountry={addCountry}
